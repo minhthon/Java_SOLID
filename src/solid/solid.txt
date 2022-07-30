@@ -1,0 +1,46 @@
+SOLID PRINCIPLES
+S: Single Responsibility Principle
+O: Open Closed Principle
+L: Liskov Substitution Principle
+I: Interface Segregation Principle
+D: Dependency Inversion Principle
+
+Single Responsibility Principle
+- Each class should have only one sole purpose and not be filled with excessive functionality
+- Mỗi class chỉ nên có một mục đích duy nhất và không được lấp đầy bởi các chức năng quá mức
+- Mỗi class hoặc function chỉ thực hiện 1 nhiệm vụ duy nhât
+
+Open Closed
+- Classes should be open for extension, closed for modification.
+- Các lớp nên mở đẻ thêm tính năng, và đóng để sửa đổi
+- In other words, you should not have to rewrite an existing class for implementing new feature.
+- Nói cách khác, không cần phải viết lại 1 class hiện có để triển khai tính năng mới
+
+Liskov Substitution principle (Nguyên lý thay thế)
+- This means that every subclass or derived class should be substitutable for their base or parent class
+- Điều này có nghĩa là mọi class con hoặc class dẩn xuất phải có thể thay thế cho lớp cơ sở hoặc lớp cha của chúng
+- Định nghĩa khác: Trong 1 chương trình, các object của class con có thể thay thế class cha mà không làm thay đổi
+tính đúng đắn của trương trình.
+- Chỉ cho class A  kế thừa từ class B khi class A thay thế được cho class B
+- VD: Trong C#, có thể chạy function foreach với List, Array bởi vì chúng được kế thừa từ interface IEnumerable. Các lass List, Array
+đã được thiết kế đúng với Liskov Substitution principle, chúng có thể chạy thay IEnumerable mà không làm thay đổi tính đúng đắn của chương trình
+- VD2: class chim có function là bay,
+ + có chim đại bàng, chim sẽ kế thừa từ lớp chim thì vẩn có thể bay
+ + tuy nhiên, khi lớp chim cánh cụt được kế thừa từ lớp chim, chim cách cụt không thể bay được nên không còn tính đúng đắn dẩn tới vi phạm nguyên lý
+
+Interface Segregation
+Interface should not force classes to implement, what they can not do.
+- Interface không nên buộc các lớp thực hiện những gì nó không thể làm
+Large interfaces should be divided into small ones
+- Các interface to nên tách nhỏ theo đúng chức năng của nó (khi một class implement một interface, class đó phải implement toàn  bộ
+các method được khai báo trong interface nên cần tách nhỏ ra interface ra chỉ chứa những method cần thiết để tránh implement những
+hàm không cần thiết cho class đó).
+
+- Để thiết kế 1 hệ thống linh hoạt, dễ thay đổi, có module của hệ thống nên giao tiếp thông qua interface.
+- Mỗi module sẽ gọi chức năng của module khác thông qua interface mà không cần quan tâm tới implement bên dưới.
+
+Dependency Inversion Principle
+- Component should depend on abstractions, not on concretions.
+- Các module cấp cao không nên phụ thuộc vào các module cấp thấp, cả 2 nên phụ thuộc vào abstraction
+- Interface (abstraction) không nên phụ thuộc vào chi tiết, mà chi tiết phải phụ thuộc vào interface
+
